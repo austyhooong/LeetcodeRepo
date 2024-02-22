@@ -1,4 +1,4 @@
-class RemoveZeroes {
+class MoveZeroes {
     public void moveZeroes(int[] nums) {
         int l = 0;
 
