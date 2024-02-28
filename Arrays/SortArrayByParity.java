@@ -1,13 +1,13 @@
 class SortArrayByParity {
     public int[] sortArrayByParity(int[] nums) {
-        int l = 0;
+        int leftIndex = 0;
 
-        for (int r = 0; r < nums.length; r++) {
-            if ((nums[r] % 2) == 0) {
-                int temp = nums[r];
-                nums[r] = nums[l];
-                nums[l] = temp;
-                l++;
+        for (int rightIndex = 0; rightIndex < nums.length; rightIndex++) {
+            if ((nums[rightIndex] % 2) == 0) {
+                int previousLeftmostValue = nums[rightIndex];
+                nums[rightIndex] = nums[leftIndex];
+                nums[leftIndex] = previousLeftmostValue;
+                leftIndex++;
             }
         }
         return nums;
