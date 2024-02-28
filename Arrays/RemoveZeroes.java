@@ -1,13 +1,13 @@
 class RemoveZeroes {
     public void moveZeroes(int[] nums) {
-        int l = 0;
+        int leftIndex = 0;
 
-        for (int r = 0; r < nums.length; r++) {
+        for (int rightIndex = 0; r < nums.length; rightIndex++) {
             if (nums[r] != 0) {
-                int temp = nums[r];
-                nums[r] = nums[l];
-                nums[l] = temp;
-                l++;
+                int previousLeftMostValue = nums[rightIndex];
+                nums[rightIndex] = nums[leftIndex];
+                nums[leftIndex] = previousLeftMostValue;
+                leftIndex++;
             }
         }
     }
