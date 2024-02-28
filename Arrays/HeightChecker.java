@@ -3,31 +3,31 @@ import java.util.Arrays;
 public class HeightChecker {
 
     public int heightChecker(int[] heights) {
-        int[] expected = Arrays.copyOf(heights, heights.length);
+        int[] expectedHeight = Arrays.copyOf(heights, heights.length);
 
         int misplacedElements = 0;
 
         // selection sort the expected array
-        int length = expected.length;
+        int length = expectedHeight.length;
         for (int i = 0; i < length; i++) {
-            int min = expected[i];
+            int minHeight = expectedHeight[i];
             int indexOfMin = i;
 
             for (int j = i + 1; j < length; j++) {
-                if (expected[j] < min) {
-                    min = expected[j];
+                if (expectedHeight[j] < minHeight) {
+                    minHeight = expectedHeight[j];
                     indexOfMin = j;
                 }
             }
 
-            int temp = expected[indexOfMin];
-            expected[indexOfMin] = expected[i];
-            expected[i] = temp;
+            int currentHeight = expectedHeight[indexOfMin];
+            expectedHeight[indexOfMin] = expectedHeight[i];
+            expectedHeight[i] = currentHeight;
         }
 
         // compare expected and heights and increase misplacedElements by one every time there is an inconsistency
         for (int i = 0; i < length; i++) {
-            if (expected[i] != heights[i]) {
+            if (expectedHeight[i] != heights[i]) {
                 misplacedElements++;
             }
         }
