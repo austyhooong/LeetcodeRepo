@@ -2,16 +2,16 @@ class ShuffleArray {
     public int[] shuffle(int[] nums, int n) {
         int length = nums.length;
         int[] finalArray = new int[length];
-        int rightPointer = n;
-        int leftPointer = 0;
+        int rightIndex = n;
+        int leftIndex = 0;
         int index = 0;
 
-        while (rightPointer < length) {
-            finalArray[index] = nums[leftPointer];
-            finalArray[index + 1] = nums[rightPointer];
+        while (rightIndex < length) {
+            finalArray[index] = nums[leftIndex];
+            finalArray[index + 1] = nums[rightIndex];
 
-            leftPointer++;
-            rightPointer++;
+            leftIndex++;
+            rightIndex++;
             index += 2;
         }
         return finalArray;
