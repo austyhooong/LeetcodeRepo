@@ -20,7 +20,10 @@ class ShuffleArray {
 
 /*
 Time Complexity: O(n)
-Space Complexity: O(n)
+Space Complexity: O(1)
+The output of the function should not be considered towards space complexity; in this case
+we are not creating extra space to calculate other than the finalArray which itself is the
+output thus space complexity is O(1)
 
 https://leetcode.com/problems/shuffle-the-array/
 Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
