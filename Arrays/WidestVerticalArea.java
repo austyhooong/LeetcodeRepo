@@ -13,16 +13,18 @@ class WidestVerticalArea {
         Arrays.sort(oneDimensionalArray);
 
         for (int i = 0; i < length - 1; i++) {
-            if (widestVertical < (oneDimensionalArray[i + 1] - oneDimensionalArray[i])) {
-                widestVertical = oneDimensionalArray[i + 1] - oneDimensionalArray[i];
-            }
+//            if (widestVertical < (oneDimensionalArray[i + 1] - oneDimensionalArray[i])) {
+//                widestVertical = oneDimensionalArray[i + 1] - oneDimensionalArray[i];
+//            }
+            widestVertical = Math.max(widestVertical, oneDimensionalArray[i + 1] - oneDimensionalArray[i]);
         }
         return widestVertical;
     }
 }
 
 /*
-Time Complexity: O(n)
+Time Complexity: O(nlogn)
+sorting takes nlogn so the overall time complexity is n (to create oneDimenstionalArray) + nlogn(sorting) => nlogn
 Space Complexity: O(n)
 
 https://leetcode.com/problems/widest-vertical-area-between-two-points-containing-no-points/
